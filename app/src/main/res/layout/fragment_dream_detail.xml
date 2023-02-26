@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="16dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_Dream"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+        <EditText
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:text="@string/text_input" />
+
+        <TextView
+                android:id="@+id/last_updated_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/last_updated_date" />
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+            <CheckBox
+                    android:id="@+id/fulfilled_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="50dp"
+                    android:text="@string/text_Fulfilled" />
+
+            <CheckBox
+                    android:id="@+id/deferred_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="50dp"
+                    android:text="@string/text_Deferred" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_Entries"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+
+        <Button
+                android:id="@+id/entry_0_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00BCD4"
+                android:text="@string/entry_button_0" />
+
+        <Button
+                android:id="@+id/entry_1_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entry_button_1" />
+
+        <Button
+                android:id="@+id/entry_2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entry_button_2" />
+
+        <Button
+                android:id="@+id/entry_3_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#009688"
+                android:text="@string/entry_button_3" />
+
+        <Button
+                android:id="@+id/entry_4_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entry_button_4" />
+    </LinearLayout>
+
+</LinearLayout>

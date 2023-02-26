@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DreamCatcher</string>
+    <string name="text_Dream">Dream</string>
+    <string name="text_Deferred">Deferred</string>
+    <string name="text_Fulfilled">Fulfilled</string>
+    <string name="text_Entries">Entries</string>
+    <string name="text_input">My First Dream</string>
+    <string name="last_updated_date">Last Updated 2023-02-20 at 10:42 AM</string>
+
+
+    <string name="entry_button_0">CONCEIVED</string>
+    <string name="entry_button_1">Reflection One</string>
+    <string name="entry_button_2">Reflection Two</string>
+    <string name="entry_button_3">DEFERRED</string>
+    <string name="entry_button_4">button4</string>
+
+    <string name="dream_reflection_count">Reflections: %1$d</string>
+
+</resources>
