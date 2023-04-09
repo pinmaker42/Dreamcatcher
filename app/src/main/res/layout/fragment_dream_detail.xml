@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -9,97 +10,102 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-        <TextView
-                android:id="@+id/textView"
+        <ImageView
+                android:id="@+id/dream_photo"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/material_dynamic_neutral30"
+                android:contentDescription="@string/dream_photo"
+                android:cropToPadding="true"
+                android:scaleType="centerInside" />
+
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/text_Dream"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+                android:orientation="vertical">
 
-        <EditText
-                android:id="@+id/title_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                tools:text="@string/text_input" />
-
-        <TextView
-                android:id="@+id/last_updated_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/last_updated_date" />
-
-        <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-            <CheckBox
-                    android:id="@+id/fulfilled_checkbox"
-                    android:layout_width="wrap_content"
+            <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginStart="50dp"
-                    android:text="@string/text_Fulfilled" />
+                    android:text="@string/dream_label"
+                    android:textAppearance="?attr/textAppearanceHeadline5" />
 
-            <CheckBox
-                    android:id="@+id/deferred_checkbox"
-                    android:layout_width="wrap_content"
+            <EditText
+                    android:id="@+id/title_text"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginEnd="50dp"
-                    android:text="@string/text_Deferred" />
-        </RelativeLayout>
+                    android:autofillHints=""
+                    android:ems="10"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:text="@string/title_text" />
 
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <CheckBox
+                        android:id="@+id/fulfilled_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fulfilled_checkbox" />
+
+                <Space
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                <CheckBox
+                        android:id="@+id/deferred_checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deferred_checkbox" />
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
+    <TextView
+            android:id="@+id/last_updated_text"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            tools:text="@string/last_updated_text" />
 
-        <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/text_Entries"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
 
-        <Button
-                android:id="@+id/entry_0_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#00BCD4"
-                android:text="@string/entry_button_0" />
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/entry_label"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
 
-        <Button
-                android:id="@+id/entry_1_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/entry_button_1" />
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dream_entry_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/list_item_dream_entry" />
 
-        <Button
-                android:id="@+id/entry_2_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/entry_button_2" />
-
-        <Button
-                android:id="@+id/entry_3_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#009688"
-                android:text="@string/entry_button_3" />
-
-        <Button
-                android:id="@+id/entry_4_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/entry_button_4" />
-    </LinearLayout>
+    <!--            <Space-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="match_parent"-->
+    <!--                android:layout_weight="1" />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_reflection_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:clickable="true"
+            android:contentDescription="@string/add_reflection_button"
+            android:focusable="true"
+            android:src="@drawable/ic_add"
+            android:theme="@style/Theme.MaterialComponents"
+            app:backgroundTint="@color/teal_700"
+            app:tint="@color/white" />
 
 </LinearLayout>
