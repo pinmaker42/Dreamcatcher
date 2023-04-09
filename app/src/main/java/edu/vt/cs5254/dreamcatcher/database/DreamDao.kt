@@ -57,7 +57,6 @@ interface DreamDao {
         dream.entries.forEach { insertDreamEntry(it) }
     }
 
-    //delete dream
     @Delete
     suspend fun deleteDream(dream: Dream)
 

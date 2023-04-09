@@ -12,15 +12,13 @@ import kotlinx.coroutines.launch
 class DreamListViewModel : ViewModel() {
     private val dreamRepository = DreamRepository.get()
 
-    //using Flow: step3 - get the flow
-    //mutableStateFlow -- can used to update value within the stream
-    //                  -- to protect access to the steam, make it private
+
     private val _dreams: MutableStateFlow<List<Dream>> = MutableStateFlow(emptyList())
-    //expose the read-only stateFlow object
+
     val dreams : StateFlow<List<Dream>> get() = _dreams.asStateFlow()
 
     init {
-        //launch coroutine
+
         viewModelScope.launch {
             dreamRepository.getDreams().collect {
                 _dreams.value=it

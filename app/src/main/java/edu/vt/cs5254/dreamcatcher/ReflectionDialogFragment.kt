@@ -15,20 +15,20 @@ class ReflectionDialogFragment : DialogFragment(){
 
         val binding = FragmentReflectionDialogBinding.inflate(layoutInflater)
 
-        //if positive -- add and update
-        //if cancel, ignore
+        //If positive - add, if negative delete.  check the results to send back and set / bind it
         val positiveListener = DialogInterface.OnClickListener { _, _  ->
-            val resultText = binding.reflectionText.text.toString() //result to be sent back
+            val resultText = binding.reflectionText.text.toString()
             setFragmentResult(
                 REQUEST_KEY,
-                bundleOf(BUNDLE_KEY to resultText)// set the result, and sent back
+                bundleOf(BUNDLE_KEY to resultText)
             )
         }
 
+        //adding a listener for changes
         return AlertDialog.Builder(requireContext())
             .setView(binding.root)
             .setTitle(R.string.reflection_dialog_title)
-            .setPositiveButton(R.string.reflection_dialog_positive, positiveListener)//add listener
+            .setPositiveButton(R.string.reflection_dialog_positive, positiveListener)
             .setNegativeButton(R.string.reflection_dialog_negative, null)
             .show()
     }

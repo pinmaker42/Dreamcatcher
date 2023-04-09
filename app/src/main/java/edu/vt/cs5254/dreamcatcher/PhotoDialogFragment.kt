@@ -14,7 +14,7 @@ class PhotoDialogFragment : DialogFragment(){
 
     private val args: PhotoDialogFragmentArgs by navArgs()
 
-    //have to late initialize
+    //Needs to be initalized later
     private var photoFileName: String = ""
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -22,7 +22,6 @@ class PhotoDialogFragment : DialogFragment(){
         val binding = FragmentPhotoDialogBinding.inflate(layoutInflater)
         photoFileName=args.dreamPhotoFilename
 
-//        if(binding.photoDetail.tag!= photoFileName){
         val photoFile =
             File(requireContext().applicationContext.filesDir, photoFileName)
 
@@ -40,8 +39,6 @@ class PhotoDialogFragment : DialogFragment(){
             binding.photoDetail.setImageBitmap(null)
             binding.photoDetail.tag = null
         }
-//        }
-
 
         return AlertDialog.Builder(requireContext())
             .setView(binding.root)

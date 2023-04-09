@@ -13,15 +13,15 @@ class DreamEntryHolder(
     lateinit var boundEntry: DreamEntry
         private set
 
+    //bind buttons
     fun bind(dreamEntry: DreamEntry){
         boundEntry = dreamEntry
-        //bind buttons
         binding.listItemButton.visibility = View.GONE
         binding.listItemButton.displayEntry(dreamEntry)
     }
 
 
-    //extending
+    //extend the button entry
     private fun Button.displayEntry(dreamEntry: DreamEntry){
         visibility = View.VISIBLE
         text = dreamEntry.kind.toString()

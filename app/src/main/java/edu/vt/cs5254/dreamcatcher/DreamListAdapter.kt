@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.vt.cs5254.dreamcatcher.databinding.ListItemDreamBinding
 import java.util.*
 
-//hold item view
+//Reflection item view
 class DreamHolder(
     val binding: ListItemDreamBinding
 ): RecyclerView.ViewHolder(binding.root){
@@ -35,23 +35,23 @@ class DreamHolder(
     }
 }
 
-//creates holder for recycler view, bind data to holder
+//holder f/ creating and then recycle when needed
 class DreamListAdapter(
     private val dreams: List<Dream>,
     private val onDreamClicked: (dreamId: UUID) -> Unit
 ) :RecyclerView.Adapter<DreamHolder>(){
 
-    //create view holder, and binding, once created, remain there
+    //creates view holder / binding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DreamHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ListItemDreamBinding.inflate(inflater,parent,false)
         return DreamHolder(binding)
     }
 
-    //populate given holder, be called very often, because recycle!
+    //populates the dreams and binds
     override fun onBindViewHolder(holder: DreamHolder, position: Int) {
         val dream = dreams[position]
-        holder.bind(dream,onDreamClicked)// bind data and function
+        holder.bind(dream,onDreamClicked)
     }
 
     override fun getItemCount() = dreams.size

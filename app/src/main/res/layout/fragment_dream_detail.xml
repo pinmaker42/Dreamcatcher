@@ -91,10 +91,6 @@
             android:layout_height="wrap_content"
             tools:listitem="@layout/list_item_dream_entry" />
 
-    <!--            <Space-->
-    <!--                android:layout_width="0dp"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:layout_weight="1" />-->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_reflection_button"
             android:layout_width="wrap_content"
